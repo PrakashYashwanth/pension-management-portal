@@ -1,0 +1,39 @@
+.wave {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.img img {
+  width: 500px;
+}
+
+.card {
+  width: 500px;
+}
+
+.text-right {
+  display: flex;
+}
+
+.btn-primary {
+  background-image: linear-gradient(to right, #cd79c8, #c1109e, #cd79c8);
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+.card-title {
+  font-weight: bolder;
+  margin-bottom: 5rem;
+  margin-left: 5rem;
+}

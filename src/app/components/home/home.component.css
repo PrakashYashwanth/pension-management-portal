@@ -1,0 +1,19 @@
+.image {
+  position: fixed;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.container {
+  background-image: url("https://media.istockphoto.com/photos/shot-of-a-pension-money-jar-on-a-table-at-home-picture-id1356380551?b=1&k=20&m=1356380551&s=170667a&w=0&h=pEhktQ4BCuEWgZ8IjwllYkvqEumPcmTu0GCVv6p-eZs=");
+  background-size: cover;
+  height: 60rem;
+}
+
+.content {
+  margin: 250px 0px 0px 50px;
+  display: flex;
+  justify-content: flex-start;
+}

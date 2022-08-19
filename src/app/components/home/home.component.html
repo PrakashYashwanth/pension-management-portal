@@ -1,0 +1,24 @@
+<app-nav-bar></app-nav-bar>
+<div class="container">
+  <div class="content">
+    <div *ngIf="!loggedIn">
+      <h1>Pension Management System</h1>
+      <p>Please login to avail the benefits</p>
+
+      <a [routerLink]="['login']">
+        <button class="btn btn-primary">LOGIN</button>
+      </a>
+    </div>
+    <div *ngIf="loggedIn">
+      <h1>Pension Management System</h1>
+      <p>
+        Please click on the search button and enter your Aadhar Number in the
+        next page.
+      </p>
+
+      <a [routerLink]="['/pensioner/search']">
+        <button class="btn btn-primary">SEARCH</button>
+      </a>
+    </div>
+  </div>
+</div>
