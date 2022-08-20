@@ -13,21 +13,21 @@ export class PensionerService {
 
   listPensionerDetails() {
     return this.http
-      .get(`${environment.apiUrl}getAllPensioner`)
+      .get(`${environment.pensionerApiUrl}findAllPensionerDetails`)
       .pipe(catchError(this.handleError));
   }
 
   viewPensioner(id: string) {
     this.aadhar = id;
     return this.http
-      .get(`${environment.apiUrl}PensionerDetailByAadhaar/` + id)
+      .get(`${environment.pensionerApiUrl}findPensionerDetailByAadhaar/` + id)
       .pipe(catchError(this.handleError));
   }
 
   processPensioner(aadharNum: String) {
     const aadharObj = { aadharNumber: aadharNum };
     return this.http
-      .post(`${environment.apiUrl}ProcessPension`, aadharObj)
+      .post(`${environment.processApiUrl}ProcessPension`, aadharObj)
       .pipe(catchError(this.handleError));
   }
 

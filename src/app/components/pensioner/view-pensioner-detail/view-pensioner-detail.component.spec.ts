@@ -1,6 +1,10 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+
 import { ViewPensionerDetailComponent } from './view-pensioner-detail.component';
+import { ActivatedRoute } from '@angular/router';
+import { AppRoutingModule } from 'src/app/app-routing.module';
 
 describe('ViewPensionerDetailComponent', () => {
   let component: ViewPensionerDetailComponent;
@@ -8,9 +12,9 @@ describe('ViewPensionerDetailComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewPensionerDetailComponent ]
-    })
-    .compileComponents();
+      declarations: [ViewPensionerDetailComponent],
+      imports: [HttpClientTestingModule, AppRoutingModule],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(ViewPensionerDetailComponent);
     component = fixture.componentInstance;

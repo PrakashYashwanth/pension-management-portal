@@ -14,7 +14,7 @@ export class LoginService {
   generateToken(credentials: any) {
     localStorage.setItem('username', credentials.userName);
     return this.http
-      .post(`${environment.apiUrl}authenticate`, credentials)
+      .post(`${environment.authApiUrl}authenticateuser`, credentials)
       .pipe(catchError(this.handleError));
   }
 
