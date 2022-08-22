@@ -27,7 +27,16 @@
 }
 
 .navbar {
+  padding: 1rem;
   background-color: #38d39f !important;
+}
+
+.navbar-nav.mr-auto {
+  padding-top: 1rem;
+}
+
+.navbar-nav.mr-auto li a {
+  font-size: larger !important;
 }
 
 @media only screen and (min-width: 992px) {
@@ -41,4 +50,16 @@
 
 .nav-item.active.nav-link:hover {
   cursor: pointer;
+}
+
+.navbar-toggler {
+  justify-content: center;
+  background-image: linear-gradient(to right, #cd79c8, #c1109e, #cd79c8);
+  width: 100px;
+}
+
+.home {
+  height: 3rem;
+  margin-left: 3rem;
+  margin-right: 1rem;
 }

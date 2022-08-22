@@ -1,59 +1,80 @@
 <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
+  <!-- nav bar toggler -->
+  <button
+    class="navbar-toggler btn btn-outline-primary"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarToggler"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+    (click)="isCollapsed = !isCollapsed"
+    [attr.aria-expanded]="!isCollapsed"
+    aria-controls="navbarToggler"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
   <a class="navbar-brand" href="#"
     ><img src="../../assets/home.svg" class="home ml-3 mr-2" /> Pension
     Management
   </a>
-  <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        role="presentation"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLink="/pensioner/search"
+  <div
+    class="collapse navbar-collapse"
+    id="navbarToggler"
+    [ngbCollapse]="isCollapsed"
+  >
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/pensioner/search"
+          *ngIf="loggedIn"
+        >
+          Search
+        </a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLink="/pensioner/list"
+          *ngIf="username === 'Admin' && loggedIn"
+        >
+          List Pensioners
+        </a>
+      </li>
+    </ul>
+    <ul class="navbar-nav navbar-right">
+      <li
+        class="nav-item"
+        style="font-size: 1.5em; color: black; margin-right: 100px"
         *ngIf="loggedIn"
       >
-        Search
-      </a>
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        role="presentation"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        routerLink="/pensioner/list"
-        *ngIf="username === 'admin' && loggedIn"
+        Current User :-&nbsp;&nbsp;{{ username }} &nbsp;&nbsp;
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          *ngIf="!loggedIn"
+          routerLink="/login"
+          role="presentation"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ><span class="glyphicon glyphicon-log-in"></span> Login
+        </a>
+      </li>
+      <li
+        class="nav-item active nav-link"
+        *ngIf="loggedIn"
+        (click)="logoutUser()"
       >
-        List Pensioners
-      </a>
-    </li>
-  </ul>
-  <ul class="navbar-nav navbar-right">
-    <li
-      class="nav-item"
-      style="font-size: 1.5em; color: black"
-      *ngIf="loggedIn"
-    >
-      Current User :-&nbsp;&nbsp;{{ username }} &nbsp;&nbsp;
-    </li>
-    <li class="nav-item">
-      <a
-        class="nav-link"
-        *ngIf="!loggedIn"
-        routerLink="/login"
-        role="presentation"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }"
-        ><span class="glyphicon glyphicon-log-in"></span> Login
-      </a>
-    </li>
-    <li
-      class="nav-item active nav-link"
-      *ngIf="loggedIn"
-      (click)="logoutUser()"
-    >
-      <span class="glyphicon glyphicon-log-out"></span> Logout
-    </li>
-  </ul>
+        <span class="glyphicon glyphicon-log-out"></span> Logout
+      </li>
+    </ul>
+  </div>
 </nav>

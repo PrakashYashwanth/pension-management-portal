@@ -16,6 +16,7 @@ import { SearchPensionerComponent } from './components/pensioner/search-pensione
 import { ViewPensionerComponent } from './components/pensioner/view-pensioner/view-pensioner.component';
 import { ViewPensionerDetailComponent } from './components/pensioner/view-pensioner-detail/view-pensioner-detail.component';
 import { PensionerService } from './services/pensioner.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,7 @@ import { PensionerService } from './services/pensioner.service';
     ViewPensionerComponent,
     ViewPensionerDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule, NgbModule],
   providers: [
     LoginService,
     PensionerService,

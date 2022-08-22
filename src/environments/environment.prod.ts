@@ -1,6 +1,9 @@
 export const environment = {
   production: true,
-  authApiUrl: 'http://localhost:8100/auth/api/v1/',
-  pensionerApiUrl: 'http://localhost:8200/pensioner/api/v1/',
-  processApiUrl: 'http://localhost:8300/process/api/v1/',
+  authApiUrl:
+    'http://yash-ppm-auth-lb-1863951850.ap-south-1.elb.amazonaws.com/auth/api/v1/',
+  pensionerApiUrl:
+    'http://yash-ppm-pension-detail-lb-427116362.ap-south-1.elb.amazonaws.com/pensioner/api/v1/',
+  processApiUrl:
+    'http://yash-ppm-process-pension-lb-147334191.ap-south-1.elb.amazonaws.com/process/api/v1/',
 };

@@ -12,7 +12,11 @@ export class NavBarComponent {
   ngOnInit(): void {}
 
   loggedIn = this.loginService.isLoggedIn();
-  username = this.loginService.loginUserName();
+  username =
+    this.loginService.loginUserName()?.slice(0, 1).toUpperCase() +
+    this.loginService.loginUserName()?.slice(1).toLowerCase();
+
+  isCollapsed = true;
 
   logoutUser() {
     this.loginService.logout();
