@@ -36,9 +36,15 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/pensioner/search']);
       },
       (err) => {
+        // console.log(err);
         // console.log(err.error);
-        console.log('User or Password incorrect');
-        this.error = 'Please enter valid credentials';
+        if (err.status === 401) {
+          console.log('User or Password incorrect');
+          this.error = 'Please enter valid credentials';
+        } else {
+          console.log('Services are not running......');
+          this.error = 'Something went wrong on our side!!!';
+        }
       }
     );
   }
